@@ -1,3 +1,13 @@
+------Tag based conditions
+  {% assign tags = card_product.tags | join: ', ' %}
+         {% if section.settings.pscustom-tag != blank and tags contains "Limited-Time" %}
+              <div class="product-tag">
+                <span>{{ section.settings.pscustom-tag }}</span>
+              </div>
+        
+              {% endif %}
+
+
 ----{{ 'custom.css' | asset_url | stylesheet_tag }}
 ----{{ 'custom.js'  | asset_url | script_tag }}
 
