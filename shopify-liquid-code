@@ -6,6 +6,26 @@
               </div>
         
               {% endif %}
+-----------------
+---------- if need to change img on mobile by click same as hover
+
+.card__heading a:after {
+  position: relative !important;
+}
+
+ .card-wrapper:hover
+    .media.media--hover-effect
+    > img:first-child:not(:only-child) {
+    opacity: 0;
+  }
+  .card-wrapper:hover .media.media--hover-effect > img + img {
+    opacity: 1;
+    transition: transform var(--duration-long) ease;
+    transform: scale(1.03);
+  }
+
+
+
 
 
 ----{{ 'custom.css' | asset_url | stylesheet_tag }}
